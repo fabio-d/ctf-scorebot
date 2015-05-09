@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python2 -u
 
 # IMPORTANT:
 # This script requires the following packages: python2-imaging, exiv2 and freetype2

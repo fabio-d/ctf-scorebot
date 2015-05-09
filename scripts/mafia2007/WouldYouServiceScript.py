@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python2 -u
 
 """
 http://<server>/~wouldyou/cgi-bin/wouldyou.py

@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python2 -u
 
 import os, random, time, sys, string, re, socket, urllib
 from utility import pybrowse, browserpersonality, CtfUtil

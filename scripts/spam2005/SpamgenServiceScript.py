@@ -1,4 +1,4 @@
-#!/usr/bin/python -u
+#!/usr/bin/python2 -u
 
 """
 https://<server>:4443/login? user=myname&password=miconsenta&operation=OP-store
