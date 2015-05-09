@@ -1,11 +1,10 @@
 #!/usr/bin/python -u
 
 # IMPORTANT:
-# This script requires the following packages: python-imaging and exiv2
+# This script requires the following packages: python2-imaging, exiv2 and freetype2
 
 import sys
-from PIL import Image 
-import ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont
 import random
 import httplib
 import os
