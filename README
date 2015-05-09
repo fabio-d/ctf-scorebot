@@ -1,3 +1,12 @@
+BIG WARNING!!!
+This scorebot generates shorter flags than the one I've forked from:
+  https://github.com/RootFu/ctf-scorebot
+
+It has only been tested on the mafia2007 image available at
+  http://ictf.cs.ucsb.edu/ictfdata/2007/vms/mafia2007.tar.gz
+
+---------------------------------------------------------------
+
 To start a simple CTF game, run:
 
 python2 StandardCTF.py -i -c <config_file>

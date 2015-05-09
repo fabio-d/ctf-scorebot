@@ -29,14 +29,14 @@ class FlagManager:
 		self.iv = iv
 
 	def toTxt(self,flag):
-		packed = struct.pack("<IIId",flag.teamId,flag.serviceId,flag.round,flag.timestamp)
-		sig = hmac.new(self.phrase,packed,hashlib.md5).digest()
+		packed = struct.pack("<BBId",flag.teamId,flag.serviceId,flag.round,flag.timestamp)
+		sig = hmac.new(self.phrase,packed,hashlib.md5).digest()[:12]
 		enc = xtea.crypt(self.key,packed+sig,self.iv)
 		return "FLG"+base64.urlsafe_b64encode(enc)
 	
 	def toFlag(self,txt):
 		txt = txt.strip()
-		size = struct.calcsize("<IIId")
+		size = struct.calcsize("<BBId")
 
 		if(len(txt) <= 3+size):
 			raise FlagParseException(txt)
@@ -52,9 +52,9 @@ class FlagManager:
 		except Exception as e:
 			raise FlagParseException(str(e))
 
-		if(sig != hmac.new(self.phrase,packed,hashlib.md5).digest()):
+		if(sig != hmac.new(self.phrase,packed,hashlib.md5).digest()[:12]):
 			raise FlagParseException(txt)
 
-		teamId,serviceId,round,timestamp = struct.unpack("<IIId",packed)
+		teamId,serviceId,round,timestamp = struct.unpack("<BBId",packed)
 		
 		return Flag(teamId,serviceId,round,timestamp)		
