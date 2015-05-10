@@ -7,12 +7,12 @@ It has only been tested on the mafia2007 image available at
   http://ictf.cs.ucsb.edu/ictfdata/2007/vms/mafia2007.tar.gz
 
 Note that the following modification to the mafia2007 image is required for the
-snitch service to be detected properly:
- 1) Login as "amends" (passowrd: "amends")
+amends service to be detected properly:
+ 1) Login as "amends" (password: "amends")
  2) Open /home/amends/php-include/filter.php
  3) Go the the filter_ccnum function (near the end of file)
  4) Replace the following line
-        preg_match('/^[A-Za-z0-9=+\/]{1,40}$/', $ccnum)) {
+        preg_match('/^[A-Za-z0-9=/\+]{1,40}$/', $ccnum)) {
     with
         preg_match('/^[A-Za-z0-9=_\-]{1,40}$/', $ccnum)) {
 
